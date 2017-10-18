@@ -30,11 +30,7 @@ Add a reducer directory with an index.js file
 import { combineReducers } from 'redux';
 
 const number = (state, action) => {
-  if(action.type === 'ADD') {
-    let added = state.up + 1;
-    return Object.assign({}, state, {up: added});
-  }
-  return state || {up: 1};
+  // ...reducer code
 };
 
 export default combineReducers({
