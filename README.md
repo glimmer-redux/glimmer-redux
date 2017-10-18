@@ -9,7 +9,13 @@ yarn add glimmer-redux
 yarn add rollup-plugin-glimmer-redux
 ```
 
-Open the ember-cli-build.js file and add the rollup plugin
+Open the ember-cli-build.js file and import the rollup plugin
+
+```js
+const glimmerRedux = require('rollup-plugin-glimmer-redux');
+```
+
+Then, add the plugin to the list of rollup plugins
 
 ```js
 let app = new GlimmerApp(defaults, {
