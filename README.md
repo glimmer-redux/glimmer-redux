@@ -15,7 +15,7 @@ yarn add rollup-plugin-glimmer-redux
 
 Open the ember-cli-build.js file and add the rollup plugin
 
-```
+```js
 let app = new GlimmerApp(defaults, {
   rollup: {
     plugins: [
@@ -29,7 +29,7 @@ Open the config/environment.js file and register the [reducer type]
 
 Add a reducer directory with an index.js file
 
-```
+```js
 //src/reducers/index.js
 import { combineReducers } from 'redux';
 
@@ -55,7 +55,19 @@ https://github.com/glimmer-redux/glimmer-redux-example
 ## Usage
 
 ```js
+import { connect } from 'glimmer-redux';
+
+const stateToComputed = state => ({
+  up: state.number.up
+});
+
+const dispatchToActions = dispatch => ({
+  update: () => dispatch({type: 'ADD'})
+});
+
+export default connect(stateToComputed, dispatchToActions)();
 ```
+
 ## How do I enable time travel debugging?
 
 1. Install the [redux dev tools extension].
