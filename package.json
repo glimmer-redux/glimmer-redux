@@ -1,6 +1,6 @@
 {
   "name": "glimmer-redux",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Predictable state management for glimmer apps",
   "directories": {
     "doc": "doc",

@@ -1,9 +1,5 @@
 # Glimmer Redux
 
-[![Travis][build-badge]][build] [![Code Climate][climate-badge]][climate] [![npm package][npm-badge]][npm]
-
-## Description
-
 Predictable state management for glimmer apps
 
 ## Installation
