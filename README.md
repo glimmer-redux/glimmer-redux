@@ -46,6 +46,29 @@ https://github.com/glimmer-redux/glimmer-redux-example
 
 ## Usage
 
+You can use it with a regular Glimmer component:
+
+```js
+import { connect } from 'glimmer-redux';
+import Component, { tracked } from '@glimmer/component';
+
+class HeaderComponent extends Component {
+  @tracked up: string = 'hello';
+  @tracked
+  get text() {
+    return this._text;
+  }
+}
+
+const dispatchToActions = {
+  addTodo: text => dispatch => dispatch({type: 'ADD_TODO', text});
+}
+
+export default connect(null, dispatchToActions)(HeaderComponent);
+```
+
+Or by itself:
+
 ```js
 import { connect } from 'glimmer-redux';
 
