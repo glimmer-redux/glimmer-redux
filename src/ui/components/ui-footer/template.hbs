@@ -1,0 +1,9 @@
+<h2>footer</h2>
+
+<ul class="footer-todo-list">
+  {{#each todos key="@index" as |todo|}}
+    <li class="todo-item-text">{{todo.text}}</li>
+  {{/each}}
+</ul>
+
+<button class="todo-filter" onclick={{action filter}}>filter</button>
