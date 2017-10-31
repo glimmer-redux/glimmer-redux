@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@glimmer/application-pipeline@^0.8.0":
-  version "0.8.3"
-  resolved "https://registry.npmjs.org/@glimmer/application-pipeline/-/application-pipeline-0.8.3.tgz#7348490ab14ff49692588e854e4ddf5fd8b50440"
+"@glimmer/application-pipeline@^0.9.0":
+  version "0.9.1"
+  resolved "https://registry.npmjs.org/@glimmer/application-pipeline/-/application-pipeline-0.9.1.tgz#3c1a613fc8cbef6db1b8fcd20b8a756fd9864ead"
   dependencies:
     "@glimmer/resolution-map-builder" "^0.5.1"
     "@glimmer/resolver-configuration-builder" "^0.1.2"
@@ -33,7 +33,6 @@
     ember-cli-normalize-entity-name "^1.0.0"
     ember-cli-preprocess-registry "^3.1.1"
     ember-cli-string-utils "^1.1.0"
-    ember-cli-valid-component-name "^1.0.0"
     exists-sync "^0.0.4"
     glob "^7.1.2"
     heimdalljs-logger "^0.1.9"
@@ -44,19 +43,19 @@
     silent-error "^1.1.0"
     walk-sync "^0.3.1"
 
-"@glimmer/application@^0.7.2":
-  version "0.7.2"
-  resolved "https://registry.npmjs.org/@glimmer/application/-/application-0.7.2.tgz#82cc78367f54c11c953c8624cba92425473e1d88"
+"@glimmer/application@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.npmjs.org/@glimmer/application/-/application-0.8.0.tgz#8c78019fb78a62ede09c73ea8176052e59e281d8"
   dependencies:
-    "@glimmer/compiler" "^0.26.2"
-    "@glimmer/component" "^0.6.0"
+    "@glimmer/compiler" "^0.29.8"
     "@glimmer/di" "^0.1.9"
     "@glimmer/env" "^0.1.7"
-    "@glimmer/object-reference" "^0.26.2"
-    "@glimmer/reference" "^0.26.2"
+    "@glimmer/interfaces" "^0.29.8"
+    "@glimmer/opcode-compiler" "^0.29.8"
+    "@glimmer/reference" "^0.29.8"
     "@glimmer/resolver" "^0.3.0"
-    "@glimmer/runtime" "^0.26.2"
-    "@glimmer/util" "^0.26.2"
+    "@glimmer/runtime" "^0.29.8"
+    "@glimmer/util" "^0.29.8"
 
 "@glimmer/blueprint@^0.5.0":
   version "0.5.3"
@@ -64,25 +63,25 @@
   dependencies:
     ember-cli-string-utils "^1.1.0"
 
-"@glimmer/compiler@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/compiler/-/compiler-0.26.2.tgz#06699f02b61136f6014e7c17ba281842a5e56f26"
+"@glimmer/compiler@^0.29.8":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/compiler/-/compiler-0.29.10.tgz#b0a3d53069605d78fdf1bf1bc3be28ae81402342"
   dependencies:
-    "@glimmer/interfaces" "^0.26.2"
-    "@glimmer/syntax" "^0.26.2"
-    "@glimmer/util" "^0.26.2"
-    "@glimmer/wire-format" "^0.26.2"
-    simple-html-tokenizer "^0.3.0"
+    "@glimmer/interfaces" "^0.29.10"
+    "@glimmer/syntax" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
+    "@glimmer/wire-format" "^0.29.10"
+    simple-html-tokenizer "^0.4.1"
 
-"@glimmer/component@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.npmjs.org/@glimmer/component/-/component-0.6.0.tgz#60b88afb7ba87a9d30d44fe2dd167609be1e19cc"
+"@glimmer/component@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.npmjs.org/@glimmer/component/-/component-0.8.0.tgz#7ca3efe365c96356720a5926eda51626e0d4bc6a"
   dependencies:
     "@glimmer/di" "^0.1.9"
     "@glimmer/env" "^0.1.7"
-    "@glimmer/reference" "^0.26.2"
-    "@glimmer/runtime" "^0.26.2"
-    "@glimmer/util" "^0.26.2"
+    "@glimmer/reference" "^0.29.8"
+    "@glimmer/runtime" "^0.29.8"
+    "@glimmer/util" "^0.29.8"
 
 "@glimmer/di@^0.1.9":
   version "0.1.11"
@@ -91,6 +90,10 @@
 "@glimmer/di@^0.2.0":
   version "0.2.0"
   resolved "https://registry.npmjs.org/@glimmer/di/-/di-0.2.0.tgz#73bfd4a6ee4148a80bf092e8a5d29bcac9d4ce7e"
+
+"@glimmer/encoder@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/encoder/-/encoder-0.29.10.tgz#a49c61a0794d2e1b218ec0a563d0f84dca08334c"
 
 "@glimmer/env@^0.1.7":
   version "0.1.7"
@@ -102,31 +105,52 @@
   dependencies:
     babel-plugin-glimmer-inline-precompile "^1.2.0"
 
-"@glimmer/interfaces@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/interfaces/-/interfaces-0.26.2.tgz#f03e7309584006de164b82ff924692b210888e19"
+"@glimmer/interfaces@^0.29.10", "@glimmer/interfaces@^0.29.8":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/interfaces/-/interfaces-0.29.10.tgz#7744451ca329a42c62b08fa460808bccbddeb2ab"
   dependencies:
-    "@glimmer/wire-format" "^0.26.2"
+    "@glimmer/wire-format" "^0.29.10"
 
-"@glimmer/object-reference@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/object-reference/-/object-reference-0.26.2.tgz#df3688d3a0003775042e66c06669b5b183503b36"
+"@glimmer/object-reference@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/object-reference/-/object-reference-0.29.10.tgz#9e0acc15779611d306b66819088b0aee2cf06a48"
   dependencies:
-    "@glimmer/reference" "^0.26.2"
-    "@glimmer/util" "^0.26.2"
+    "@glimmer/reference" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
 
-"@glimmer/object@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/object/-/object-0.26.2.tgz#a6a99d88bc4acd5ce9f2e46a62b618b15e7d5bfa"
+"@glimmer/object@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/object/-/object-0.29.10.tgz#ce450757598274e476f73f61a3a36a26f81642e5"
   dependencies:
-    "@glimmer/object-reference" "^0.26.2"
-    "@glimmer/util" "^0.26.2"
+    "@glimmer/object-reference" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
 
-"@glimmer/reference@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/reference/-/reference-0.26.2.tgz#b14ad1180559e51353519ee62f21aabad737b0cc"
+"@glimmer/opcode-compiler@^0.29.10", "@glimmer/opcode-compiler@^0.29.8":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/opcode-compiler/-/opcode-compiler-0.29.10.tgz#37bb4413e614e442c908d2a38725c9358e4c7e45"
   dependencies:
-    "@glimmer/util" "^0.26.2"
+    "@glimmer/encoder" "^0.29.10"
+    "@glimmer/interfaces" "^0.29.10"
+    "@glimmer/program" "^0.29.10"
+    "@glimmer/syntax" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
+    "@glimmer/vm" "^0.29.10"
+    "@glimmer/wire-format" "^0.29.10"
+    simple-html-tokenizer "^0.4.1"
+
+"@glimmer/program@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/program/-/program-0.29.10.tgz#c9a2facda2812b6314f3f7f2153cd51f5e51bfba"
+  dependencies:
+    "@glimmer/encoder" "^0.29.10"
+    "@glimmer/interfaces" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
+
+"@glimmer/reference@^0.29.10", "@glimmer/reference@^0.29.8":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/reference/-/reference-0.29.10.tgz#fc5db84f5b2a9aeef28e1407a54679cf5817acab"
+  dependencies:
+    "@glimmer/util" "^0.29.10"
 
 "@glimmer/resolution-map-builder@^0.5.1":
   version "0.5.1"
@@ -148,39 +172,56 @@
   dependencies:
     "@glimmer/di" "^0.2.0"
 
-"@glimmer/runtime@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/runtime/-/runtime-0.26.2.tgz#2629259b619828bb058b8d9bc05a7c745ba53b05"
+"@glimmer/resolver@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.npmjs.org/@glimmer/resolver/-/resolver-0.4.1.tgz#cd9644572c556e7e799de1cf8eff2b999cf5b878"
   dependencies:
-    "@glimmer/interfaces" "^0.26.2"
-    "@glimmer/object" "^0.26.2"
-    "@glimmer/object-reference" "^0.26.2"
-    "@glimmer/reference" "^0.26.2"
-    "@glimmer/util" "^0.26.2"
-    "@glimmer/wire-format" "^0.26.2"
+    "@glimmer/di" "^0.2.0"
 
-"@glimmer/syntax@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/syntax/-/syntax-0.26.2.tgz#c8c3d5caeb09cf4614d5a3f98becbc62335728f3"
+"@glimmer/runtime@^0.29.8":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/runtime/-/runtime-0.29.10.tgz#90dce95aa6b596ff1134a11de1c77f50110c38b9"
   dependencies:
-    "@glimmer/interfaces" "^0.26.2"
-    "@glimmer/util" "^0.26.2"
+    "@glimmer/interfaces" "^0.29.10"
+    "@glimmer/object" "^0.29.10"
+    "@glimmer/object-reference" "^0.29.10"
+    "@glimmer/opcode-compiler" "^0.29.10"
+    "@glimmer/program" "^0.29.10"
+    "@glimmer/reference" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
+    "@glimmer/vm" "^0.29.10"
+    "@glimmer/wire-format" "^0.29.10"
+
+"@glimmer/syntax@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/syntax/-/syntax-0.29.10.tgz#2a074223fc3b42d49c8b9345684a80b5133dc030"
+  dependencies:
+    "@glimmer/interfaces" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
     handlebars "^4.0.6"
-    simple-html-tokenizer "^0.3.0"
+    simple-html-tokenizer "^0.4.1"
 
 "@glimmer/test-helpers@^0.30.0":
   version "0.30.0"
   resolved "https://registry.npmjs.org/@glimmer/test-helpers/-/test-helpers-0.30.0.tgz#acab0d6773d52ed1140a7bb8681fb9f26adf0b64"
 
-"@glimmer/util@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/util/-/util-0.26.2.tgz#829e0cff7cee767689267f37533ea789da0bcc36"
+"@glimmer/util@^0.29.10", "@glimmer/util@^0.29.8":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/util/-/util-0.29.10.tgz#8662daf273ffef9254b8d943d39aa396ed7225a5"
 
-"@glimmer/wire-format@^0.26.2":
-  version "0.26.2"
-  resolved "https://registry.npmjs.org/@glimmer/wire-format/-/wire-format-0.26.2.tgz#5ff95a61c32c18bc65bd5b86af74bcbdd38e62d9"
+"@glimmer/vm@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/vm/-/vm-0.29.10.tgz#e723ea7d23960dd470cc73ec31e02fd74cab2cd8"
   dependencies:
-    "@glimmer/util" "^0.26.2"
+    "@glimmer/interfaces" "^0.29.10"
+    "@glimmer/program" "^0.29.10"
+    "@glimmer/util" "^0.29.10"
+
+"@glimmer/wire-format@^0.29.10":
+  version "0.29.10"
+  resolved "https://registry.npmjs.org/@glimmer/wire-format/-/wire-format-0.29.10.tgz#90e82f67a6325468d6fee4f8dd7affc1070a9557"
+  dependencies:
+    "@glimmer/util" "^0.29.10"
 
 "@types/qunit@^2.0.31":
   version "2.0.31"
@@ -4988,9 +5029,9 @@ silent-error@^1.0.0, silent-error@^1.0.1, silent-error@^1.1.0:
   dependencies:
     debug "^2.2.0"
 
-simple-html-tokenizer@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/simple-html-tokenizer/-/simple-html-tokenizer-0.3.0.tgz#9b8b5559d80e331a544dd13dd59382e5d0d94411"
+simple-html-tokenizer@^0.4.1:
+  version "0.4.3"
+  resolved "https://registry.npmjs.org/simple-html-tokenizer/-/simple-html-tokenizer-0.4.3.tgz#9b00b766e30058b4bb377c0d4f97566a13ab1be1"
 
 slash@^1.0.0:
   version "1.0.0"
