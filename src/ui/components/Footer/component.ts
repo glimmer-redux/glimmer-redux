@@ -1,11 +1,12 @@
 import connect from '../../../connect';
+import { filteredTodos } from '../../../reducers/index';
 
 const stateToComputed = state => ({
-  up: state.number.up
+  todos: filteredTodos(state)
 });
 
 const dispatchToActions = dispatch => ({
-  update: () => dispatch({type: 'UP'})
+  filter: () => dispatch({type: 'FILTER_TODO'})
 });
 
 export default connect(stateToComputed, dispatchToActions)();

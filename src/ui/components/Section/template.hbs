@@ -1,0 +1,15 @@
+<h2>section</h2>
+
+<ul class="todo-list">
+  {{#each todos key="@index" as |todo|}}
+    <li class="todo-item-text">{{todo.text}}</li>
+  {{/each}}
+</ul>
+
+<h2>section (filtered)</h2>
+
+<ul class="filtered-todo-list">
+  {{#each filtered key="@index" as |todo|}}
+    <li class="todo-item-text">{{todo.text}}</li>
+  {{/each}}
+</ul>
