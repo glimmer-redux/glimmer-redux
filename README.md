@@ -1,34 +1,132 @@
-# glimmer-redux
+# Glimmer Redux
 
-This README outlines the details of collaborating on this Glimmer application.
-A short introduction of this app could easily go here.
+[![Travis][build-badge]][build] [![npm package][npm-badge]][npm]
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Yarn](https://yarnpkg.com/en/)
-* [Ember CLI](https://ember-cli.com/)
+Predictable state management for glimmer apps
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd glimmer-redux`
-* `yarn`
+```
+yarn add glimmer-redux
+yarn add rollup-plugin-glimmer-redux
+```
 
-## Running / Development
+Open the `ember-cli-build.js` file and add the rollup plugin
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+```js
+const glimmerRedux = require('rollup-plugin-glimmer-redux');
 
-### Building
+module.exports = function(defaults) {
+  let app = new GlimmerApp(defaults, {
+    rollup: {
+      plugins: [
+        glimmerRedux()
+      ]
+    }
+  });
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+  return app.toTree();
+};
+```
 
-## Further Reading / Useful Links
+Open the `config/environment.js` file and register the [reducer type]
 
-* [glimmerjs](http://github.com/tildeio/glimmer/)
-* [ember-cli](https://ember-cli.com/)
+Add a reducer directory with an `index.js` file
+
+```js
+//src/reducers/index.js
+import { combineReducers } from 'redux';
+
+const number = (state, action) => {
+  // ...reducer code
+};
+
+export default combineReducers({
+  number
+});
+```
+
+
+## Examples
+
+https://github.com/glimmer-redux/example-basic
+
+https://github.com/glimmer-redux/example-todomvc
+
+https://github.com/glimmer-redux/example-reduxsaga
+
+## Usage with glimmer component
+
+```js
+//src/ui/components/hello-world/component.ts
+import { connect } from 'glimmer-redux';
+import Component, { tracked } from '@glimmer/component';
+
+class MyComponent extends Component {
+  @tracked('up')
+  get text() {
+    let up = this.up;
+    let text = 'Glimmer Redux';
+    return `${text} ${up}`;
+  }
+}
+
+const stateToComputed = state => ({
+  up: state.number.up
+});
+
+const dispatchToActions = dispatch => ({
+  update: () => dispatch({type: 'ADD'})
+});
+
+export default connect(stateToComputed, dispatchToActions)(MyComponent);
+```
+
+
+## Usage without glimmer component
+
+```js
+//src/ui/components/hello-world/component.ts
+import { connect } from 'glimmer-redux';
+
+const stateToComputed = state => ({
+  up: state.number.up
+});
+
+const dispatchToActions = dispatch => ({
+  update: () => dispatch({type: 'ADD'})
+});
+
+export default connect(stateToComputed, dispatchToActions)();
+```
+
+## How do I enable time travel debugging?
+
+1. Install the [redux dev tools extension].
+
+2. Enjoy!
+
+## Running Tests
+
+    yarn
+    ember test
+
+## License
+
+Copyright © 2017 Toran Billups http://toranbillups.com
+
+Licensed under the MIT License
+
+[build-badge]: https://travis-ci.org/glimmer-redux/glimmer-redux.svg?branch=master
+[build]: https://travis-ci.org/glimmer-redux/glimmer-redux
+
+[npm-badge]: https://img.shields.io/npm/v/glimmer-redux.svg?style=flat-square
+[npm]: https://www.npmjs.org/package/glimmer-redux
+
+[climate-badge]: https://codeclimate.com/github/glimmer-redux/glimmer-redux/badges/gpa.svg
+[climate]: https://codeclimate.com/github/glimmer-redux/glimmer-redux
+
+[redux]: https://github.com/reactjs/redux
+[redux dev tools extension]: https://github.com/zalmoxisus/redux-devtools-extension
+
+[reducer type]: https://github.com/glimmer-redux/glimmer-redux-example/blob/master/config/environment.js

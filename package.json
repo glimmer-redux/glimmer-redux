@@ -1,7 +1,7 @@
 {
   "name": "glimmer-redux",
-  "version": "0.0.0",
-  "description": "A brand new Glimmer app.",
+  "version": "0.0.8",
+  "description": "Predictable state management for glimmer apps",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,9 +11,19 @@
     "start": "ember server",
     "test": "ember test"
   },
+  "homepage": "https://github.com/glimmer-redux/glimmer-redux",
+  "bugs": {
+    "url": "https://github.com/glimmer-redux/glimmer-redux/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glimmer-redux/glimmer-redux"
+  },
   "engines": {
     "node": ">= 6"
   },
+  "author": "Toran Billups toranb@gmail.com",
+  "license": "MIT",
   "devDependencies": {
     "@glimmer/application": "^0.8.0",
     "@glimmer/application-pipeline": "^0.9.0",
