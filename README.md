@@ -58,7 +58,7 @@ https://github.com/glimmer-redux/example-reduxsaga
 ## Usage with glimmer component
 
 ```js
-//src/ui/components/hello-world/component.ts
+//src/ui/components/HelloWorld/component.ts
 import { connect } from 'glimmer-redux';
 import Component, { tracked } from '@glimmer/component';
 
@@ -86,7 +86,7 @@ export default connect(stateToComputed, dispatchToActions)(MyComponent);
 ## Usage without glimmer component
 
 ```js
-//src/ui/components/hello-world/component.ts
+//src/ui/components/HelloWorld/component.ts
 import { connect } from 'glimmer-redux';
 
 const stateToComputed = state => ({
