@@ -129,4 +129,4 @@ Licensed under the MIT License
 [redux]: https://github.com/reactjs/redux
 [redux dev tools extension]: https://github.com/zalmoxisus/redux-devtools-extension
 
-[reducer type]: https://github.com/glimmer-redux/glimmer-redux-example/blob/master/config/environment.js
+[reducer type]: https://github.com/glimmer-redux/example-basic/blob/master/config/environment.js
