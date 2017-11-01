@@ -57,9 +57,9 @@
     "@glimmer/runtime" "^0.29.8"
     "@glimmer/util" "^0.29.8"
 
-"@glimmer/blueprint@^0.5.0":
-  version "0.5.3"
-  resolved "https://registry.npmjs.org/@glimmer/blueprint/-/blueprint-0.5.3.tgz#9aed2f9260ee5503436178b4dd3e2cc7d83b2cec"
+"@glimmer/blueprint@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.npmjs.org/@glimmer/blueprint/-/blueprint-0.6.0.tgz#9d655474fb5c7626f6a878767634242564d45bc3"
   dependencies:
     ember-cli-string-utils "^1.1.0"
 
