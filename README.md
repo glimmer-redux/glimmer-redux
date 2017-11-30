@@ -31,10 +31,10 @@ module.exports = function(defaults) {
 
 Open the `config/environment.js` file and register the [reducer type]
 
-Add a reducer directory with an `index.js` file
+Add a reducer directory with an `index.ts` file
 
 ```js
-//src/reducers/index.js
+//src/reducers/index.ts
 import { combineReducers } from 'redux';
 
 const number = (state, action) => {
