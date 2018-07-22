@@ -11,13 +11,13 @@ module('Component: Layout', function(hooks) {
     resetStore();
 
     await this.render(hbs`<Layout />`);
-    let number = this.containerElement.querySelector('.number-up').textContent;
-    assert.equal(number, '0');
+    let theNumber = this.containerElement.querySelector('.number-up').textContent;
+    assert.equal(theNumber, '0');
     this.containerElement.querySelector('.number-add').click();
     let done = assert.async();
     setTimeout(() => {
-      number = this.containerElement.querySelector('.number-up').textContent;
-      assert.equal(number, '1');
+      theNumber = this.containerElement.querySelector('.number-up').textContent;
+      assert.equal(theNumber, '1');
       done();
     }, 10);
   });

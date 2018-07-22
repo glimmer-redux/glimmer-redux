@@ -1,10 +1,10 @@
 import connect from '../../../connect';
 
-const stateToComputed = state => ({
+const stateToComputed = (state) => ({
   up: state.number.up
 });
 
-const dispatchToActions = dispatch => ({
+const dispatchToActions = (dispatch) => ({
   update: () => dispatch({type: 'UP'})
 });
 

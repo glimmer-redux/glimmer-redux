@@ -1,7 +1,7 @@
 import connect from '../../../connect';
 import { filteredTodos } from '../../../reducers/index';
 
-const stateToComputed = state => ({
+const stateToComputed = (state) => ({
   todos: state.todos.all,
   filtered: filteredTodos(state)
 });
